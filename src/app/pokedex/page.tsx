@@ -135,18 +135,11 @@ const Pokedex: React.FC = () => {
           onChange={(e) => setLimit(Number(e.target.value))}
           style={{ padding: "10px", borderRadius: "5px" }}
         >
-          <option value={10}>10</option>
-          <option value={20}>20</option>
-          <option value={50}>50</option>
-          <option value={100}>100</option>
-          <option value={200}>200</option>
-          <option value={300}>300</option>
-          <option value={400}>400</option>
-          <option value={500}>500</option>
-          <option value={600}>600</option>
-          <option value={700}>700</option>
-          <option value={800}>800</option>
-          <option value={900}>900</option>
+            {Array.from({ length: 9 }, (_, i) => (i + 1) * 100).map((value) => (
+                <option key={value} value={value}>
+                {value}
+                </option>
+            ))}
         </select>
       </div>
 
